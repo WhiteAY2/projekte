@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for loops
+        for (let i = 1; i <=10 ;i++) {
+            console.log(i);
+        }
+    //e pa perfunduar
+    let sum = 0;
+    for (let i = 0;i <= 100; i++) {
+        sum += i;
+    }
+    console.log(sum);
+    //
+    for (let i = 1; i<= 20; i++){
+        if(i % 2 === 0){
+            console.log(i + " is an even number");
+        }
+        else{
+            console.log(i);
+        }
+    }
+    //
+    let shumzimi =0;
+    for (let i = 1; i <=5; i++){
+        shumzimi= i * 5;
+        console.log(shumzimi);
+    }
+    //
+    function evenOdd(num){
+    if(num % 2 === 0){
+        return "even";
+    }
+    else{
+        return "odd";
+    }
+}
+    console.log(evenOdd(7));
+    //
+    function pozitivETC(num){
+        if (num === 0){
+            return "zero";
+        }
+        else if (num < 0){
+            return "negative";
+        }
+        else if (num >= 1) {
+            return "positive";
+        }
+    }
+    console.log(pozitivETC(0));
+    //leap year 
+    function leapyear(year){
+        if (year % 4 === 0 ){
+            if (year % 100 === 0){
+                if (year % 400 === 0){
+                    return "leap year";
+                }
+                else{
+                    return "not leap year";
+                }
+            }
+            else {
+                return "leap year";
+            }
+        }
+        else{
+            return "not leap year";
+        }
+    }
+    console.log(leapyear(2021))
+    // 
+    function vote(age){
+        if (age >= 18){
+            return "you can vote";
+        }
+        else {
+            return "you can't vote";
+        }
+    }
+    console.log(vote(19));
+    //ARRAY FUNCTIONS 
+    let arr = [1,2,3,4,5,6,7,8,9,10];
+    function maxNum(arr){
+        let max = arr[0];
+        for (let i = 1; i < arr.length; i++){
+            if (arr[i] > max){
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+    console.log(maxNum(arr));
+    //reverse array
+    let world = "hello";
+    function reverse(word){
+    let reverse = "";
+    for (let i = word.length - 1; i >= 0; i--){
+        reverse += word[i];
+    }
+}
+    console.log(reverse(world));
+    //FILTER
+    let arr1 =["apple","banana","kiwi","orange","grape"];
+    let amita = arr1.filter(function(fruit){
+        return fruit.length > 5;
+    });
+    console.log(amita);
+    //reduce()method
+    function squareNumbers(arr) {
+        return arr.map(num => num * num);
+    }
+    console.log(squareNumbers([1, 2, 3, 4, 5]));   
+
+    let numbers = [1, 2, 3, 4, 5];
+    console.log(squareNumbers(numbers));
+    //map()method  ?
+    let temperature =[24,15,19,67];
+    let feranhite = temperature.map((temp)=>{
+        return (temp * (9/5))+ 32;
+    })
+    console.log(feranhite);
+    //FUNCTIONS
+    function add(a,b){
+        return a + b;
+    }
+    console.log(add(2,3));
+    //
+    function isPrime(n) {
+        if (n <= 1) return false;
+        for (let i = 2; i < n; i++) {
+            if (n % i === 0) return false;
+        }
+        return true;
+    }
+    console.log(isPrime(9
+        
+    )); 
+    console.log(isPrime(10)); 
+    //find max string
+    function maxString(arr){
+        let max = arr[0];
+        for (let i = 1; i < arr.length; i++){
+            if (arr[i].length > max.length){
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+    console.log(maxString(arr1));
+    //  getCarInfo()
+    let car = {
+        make: "Toyota",
+        model: "Corolla",
+        year: 2020,
+        price: 20000,
+    }
+    function getCarInfo(car){
+        return "This is a " + car.year + " " + car.make + " " + car.model 
+        + " and it costs " + car.price + " dollars.";
+    }
+    console.log(getCarInfo(car));
+    //return  arr key
+    function arrKey(arr){
+        let key = [];
+        for (let i = 0; i < arr.length; i++){
+            key.push(i);
+        }
+        return key;
+    }
+    console.log(arrKey(arr1));
+    //student average age
+    let students = [
+        {name: "John", age: 20},
+        {name: "Jane", age: 25},
+        {name: "Jim", age: 30},
+        {name: "Jill", age: 35},
+    ]
+    function averageAge(students){
+        let total = 0;
+        for (let i = 0; i < students.length; i++){
+            total += students[i].age;
+        }
+        return total / students.length;
+    }
+    console.log(averageAge(students));
+    //object merge
+    let obj1 = {
+        name: "John",
+        age: 20,
+    }
+    let obj2 = {
+        hobby: "programming",
+        job: "developer",
+    }
+    function merge(obj1,obj2){
+        return {...obj1, ...obj2};
+    }
+    console.log(merge(obj1, obj2));
+    //cart total
+    let cart = [
+        {name: "apple", price: 2},
+        {name: "banana", price: 3},
+        {name: "orange", price: 4},
+        {name: "kiwi", price: 5},
+        {name: "grape", price: 6},
+    ]
+    function totalCart(cart){
+        let total = 0;
+        for (let i = 0; i < cart.length; i++){
+            total += cart[i].price;
+        }
+        return total;
+    }
+    console.log(totalCart(cart));
+    //fibonacci()
+    function fibonacci(n){
+        let arr = [0,1];
+        for (let i = 2; i < n; i++){
+            arr.push(arr[i - 1] + arr[i - 2]);
+        }
+        return arr;
+    }
+    console.log(fibonacci(50));
+    //book sort by specific author
+    let books = [
+        {title: "The Alchemist", author: "Paulo Coelho"},
+        {title: "The Hobbit", author: "J.R.R. Tolkien"},
+        {title: "The Great Gatsby", author: "F. Scott Fitzgerald"},
+        {title: "The Catcher in the Rye", author: "Paulo Coelho"},
+    ]
+    function bookSort(books, author){
+        let arr = [];
+        for (let i = 0; i < books.length; i++){
+            if (books[i].author === author){
+                arr.push(books[i].title);
+            }
+        }
+        return arr;
+    }
+    console.log(bookSort(books, "Paulo Coelho"));
+    </script>
+</body>
+</html>
