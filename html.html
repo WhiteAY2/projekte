@@ -95,13 +95,27 @@ for (let i = 1; i <= 100; i++){
     }
 }
 //passwor validation has 8 characters and includes number
-let password ="anibengu0";
-if (password.length >= 8 && password.includes("0")){
-    console.log("Valid password");
+let passwordnumbre = false;
+let passwordtext = false;
+function passwordValidator(password){
+    if (password.length >= 8){
+        for (let i = 0; i < password.length; i++){
+            if (Number(password[i])){
+                passwordnumbre = true;
+            }
+            else{
+                passwordtext = true;
+            }
+        }
+    }
+    if (passwordnumbre && passwordtext){
+        return "Password is valid";
+    }
+    else{
+        return "Password is invalid";
+    }
 }
-else{
-    console.log("Invalid password");
-}
+console.log(passwordValidator("12345678"));
 //function 
 //greeting function
 function hel(name){
